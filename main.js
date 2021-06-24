@@ -20,7 +20,7 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/)
     const command = args.shift().toLowerCase();
     if (client.commands.get(command) != null) {
-        client.commands.get(command).execute(message, args, Discord, myutil, setting);
+        client.commands.get(command).execute(message, args, Discord, client, myutil, setting);
     }
 });
 client.login(setting.token);
